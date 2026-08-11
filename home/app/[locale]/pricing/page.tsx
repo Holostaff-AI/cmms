@@ -3,6 +3,7 @@ import Pricing from "src/content/pricing";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/src/components/Footer";
 import { getLocalizedMetadata } from "src/utils/metadata";
+import { HolostaffStageMark } from '../../holostaff-stage-mark'
 
 const ldJson = {
   "@context": "https://schema.org",
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
@@ -69,4 +70,18 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <Footer />
     </>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Atlas CMMS · deploy v1).
+// Marks the visitor entering the "mutual commit" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="mutual_commit" /> {/* entry page for "Sign Up" */}
+      <Page {...props} />
+    </>
+  )
 }
