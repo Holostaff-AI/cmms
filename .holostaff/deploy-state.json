@@ -1,0 +1,21 @@
+{
+  "holostaff": {
+    "version": 1,
+    "sourceId": "ks_msp6410d_6kwov0",
+    "sourceName": "Atlas CMMS",
+    "artifactVersion": 1,
+    "editsKey": "07c7c29afc4eb68edda44099ff884bd499e27eb0",
+    "stageCopilots": {
+      "awareness": null,
+      "education": null,
+      "selection": null,
+      "mutual_commit": null,
+      "onboarding": "atlas-max",
+      "adoption": "atlas-max",
+      "expansion": "atlas-max"
+    },
+    "deployId": "deploy_v1_2026-08-11T21-24",
+    "triggeredBy": "xY8Ee8Lo7aZc09uYvTdo6yzNvWm1",
+    "triggeredAt": "2026-08-11T21:24:56.313Z"
+  }
+}
